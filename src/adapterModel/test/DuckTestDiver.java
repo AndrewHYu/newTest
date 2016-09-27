@@ -7,6 +7,7 @@ import adapterModel.inter.Duck;
 
 /**
  * Created by Andrew  on 2016/9/26.
+ * https://github.com/AndrewHYu/newTest.git
  */
 public class DuckTestDiver {
     public static void main(String[] args) {
