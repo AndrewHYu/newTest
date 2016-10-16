@@ -1,5 +1,7 @@
 package iteratorModel.second;
 
+import java.util.Iterator;
+
 /**
  * Created by Andrew  on 2016/10/12.
  */
@@ -56,5 +58,10 @@ public class MenuItem extends MenuComponent{
         }
         System.out.println(","+getPrice());
         System.out.println("     -------"+getDescription());
+    }
+
+    @Override
+    public Iterator createIterator() {
+        return null;////////
     }
 }

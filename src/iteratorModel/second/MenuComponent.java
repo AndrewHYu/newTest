@@ -1,5 +1,7 @@
 package iteratorModel.second;
 
+import java.util.Iterator;
+
 /**
  * Created by Andrew  on 2016/10/12.
  */
@@ -27,5 +29,8 @@ public abstract class MenuComponent {
     }
     public void print(){
         throw new UnsupportedOperationException();
+    }
+    public Iterator createIterator(){
+        return null;
     }
 }
