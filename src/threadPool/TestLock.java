@@ -3,12 +3,21 @@ package threadPool;
 import org.apache.http.annotation.GuardedBy;
 import org.apache.http.annotation.ThreadSafe;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ThreadPoolExecutor;
+
 /**
  * Created by Andrew  on 2016/9/11.
  */
 @ThreadSafe
 public class TestLock {
     public static void main(String[] args) {
+        int x=23;
+        System.out.println((3>4?"d":(x+++((--x)+x))));
+        System.out.println(x);
+        System.out.println(--x);
+        System.out.println(x);
+        System.out.println(x+++x);
         final TestLock testLock=new TestLock();
         for (int i=0;i<20;i++){
             new Thread(new Runnable() {

@@ -1,6 +1,5 @@
 package jvm.JConsole;
 
-import sun.org.mozilla.javascript.internal.Synchronizer;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
