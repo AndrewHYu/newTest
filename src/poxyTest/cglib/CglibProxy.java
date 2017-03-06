@@ -12,9 +12,11 @@ public class CglibProxy implements MethodInterceptor {
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         System.out.println("++++++before " + methodProxy.getSuperName() + "++++++");
-        System.out.println(method.getName());
         Object o1 = methodProxy.invokeSuper(o, objects);
-        System.out.println("++++++before " + methodProxy.getSuperName() + "++++++");
+//        method.invoke(o,objects);
+        System.out.println(method.getName());
+        System.out.println(methodProxy.getSuperName());
+        System.out.println("++++++after " + methodProxy.getSuperName() + "++++++");
         return o1;
     }
 }
