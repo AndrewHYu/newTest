@@ -14,7 +14,7 @@ import java.nio.channels.SocketChannel;
  */
 public class AServerTest {
     public static void main(String[] args) throws IOException {
-        int [] ports = {8080};
+        int [] ports = {8090};
         AServer aServer = new AServer(ports);
        /* SocketChannel socketChannel = SocketChannel.open();
         socketChannel.blockingLock();

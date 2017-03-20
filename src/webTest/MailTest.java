@@ -21,7 +21,7 @@ public class MailTest {
     public static void main(String[] args)throws MessagingException,IOException
     {
         Properties props=new Properties();
-        try(InputStream in= Files.newInputStream(Paths.get("D:\\project\\newTest/source","mail.properties")))
+        try(InputStream in= Files.newInputStream(Paths.get("C:\\project\\newTest/source","mail.properties")))
         {
             props.load(in);
         }

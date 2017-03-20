@@ -15,7 +15,7 @@ import java.util.Set;
  */
 public class AServer {
     private int port[];
-    private ByteBuffer byteBuffer=ByteBuffer.allocate(5);
+    private ByteBuffer byteBuffer=ByteBuffer.allocate(1024);
 
     public AServer(int[] port) throws IOException {
         this.port = port;
@@ -50,11 +50,11 @@ public class AServer {
                         int r=socketChannel.read(byteBuffer);
                         if (r<=0){
                             System.out.println("接收完毕，准备回复");
-                            socketChannel.write(ByteBuffer.wrap("你好".getBytes()));
+//                            socketChannel.write(ByteBuffer.wrap("你好".getBytes()));
                             socketChannel.close();
                             break;
                         }
-                        System.out.println("##" + r + " " + new String(byteBuffer.array(), 0, byteBuffer.position()));
+                        System.out.println( new String(byteBuffer.array(), 0, byteBuffer.position()));
                         byteBuffer.flip();
 
                     }
