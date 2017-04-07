@@ -1,4 +1,4 @@
-package kkhomework;
+package kkhomework.test1;
 
 import java.util.*;
 
