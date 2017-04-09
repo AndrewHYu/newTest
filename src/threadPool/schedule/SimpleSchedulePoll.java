@@ -10,7 +10,6 @@ import java.util.concurrent.*;
 public class SimpleSchedulePoll {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 //        ExecutorService executor = Executors.newScheduledThreadPool(2);
-//        Executors.newCachedThreadPool()
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(2);
         ExecutorService executorServiceTwo = Executors.newFixedThreadPool(2);
         List<Future<Integer>> futureList = new ArrayList<>();
