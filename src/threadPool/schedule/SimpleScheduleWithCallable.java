@@ -13,8 +13,8 @@ public class SimpleScheduleWithCallable {
         List<ScheduledFuture<Integer>> futureList = new ArrayList<>();
         for (int i=0;i<3;i++){
             ScheduledFuture future = scheduledExecutorService.scheduleWithFixedDelay(new FutureTask(new ByCallable(i)), 1,3, TimeUnit.SECONDS);
-            future.cancel(true);
-            System.out.println(future.get());
+/*            future.cancel(true);
+            System.out.println(future.get());*/
             futureList.add(future);
         }
         for (ScheduledFuture s:
