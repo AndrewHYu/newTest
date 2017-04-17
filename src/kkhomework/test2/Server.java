@@ -35,7 +35,7 @@ public class Server {
 
     public void listen() throws IOException {
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
-        serverSocketChannel.bind(new InetSocketAddress(4545));
+        serverSocketChannel.bind(new InetSocketAddress(7890));
         serverSocketChannel.configureBlocking(false);
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
     }
@@ -54,7 +54,7 @@ public class Server {
                         if (byteBuffer.position()>0){
                             String string = new String(byteBuffer.array(),0,byteBuffer.position());
                             System.out.println(string);
-                            authenticatorSource=string.substring(string.indexOf("authenticatorSource")+"authenticatorSource".length()+2,string.indexOf("version")-2);
+//                            authenticatorSource=string.substring(string.indexOf("authenticatorSource")+"authenticatorSource".length()+2,string.indexOf("version")-2);
                         }
                         byteBuffer.clear();
                     }
