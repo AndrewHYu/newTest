@@ -12,6 +12,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 @ThreadSafe
 public class TestLock {
     public static void main(String[] args) {
+        System.out.println((-2>>>1));
+        System.out.println((-2>>1));
         int x=23;
         System.out.println((3>4?"d":(x+++((--x)+x))));
         System.out.println(x);

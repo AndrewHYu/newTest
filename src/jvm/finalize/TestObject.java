@@ -4,15 +4,14 @@ package jvm.finalize;
  * Created by Andrew  on 2017/4/19.
  */
 public class TestObject {
-    private TestObject object;
-    public TestObject(TestObject o) {
-        this.object = o;
+    MainTest m;
+    public TestObject(MainTest m){
+        this.m=m;
     }
-
     @Override
     protected void finalize() throws Throwable {
         System.out.println("--------finalize------");
-        object=this;
+        m.t=this;
         super.finalize();
     }
 }
