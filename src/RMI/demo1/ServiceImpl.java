@@ -26,6 +26,7 @@ public class ServiceImpl extends UnicastRemoteObject implements Service {
 
     @Override
     public String service(String content) {
+        System.out.println("server service");
         return "server >> " + content;
     }
 }
