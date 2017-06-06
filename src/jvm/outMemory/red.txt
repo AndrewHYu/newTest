@@ -1,2 +1,0 @@
-测试各种内存溢出
-虚拟机设置 -verbose gc -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8
