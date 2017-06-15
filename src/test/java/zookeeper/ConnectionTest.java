@@ -62,7 +62,7 @@ public class ConnectionTest {
 
         TimeUnit.SECONDS.sleep(5);
 
-        zk.delete("/eclipse",1);
+        zk.delete("/eclipse",  -1);
         zk.close();
 
     }
