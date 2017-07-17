@@ -36,7 +36,7 @@ public class CountTask extends RecursiveTask<Integer>{
 
             System.out.println("等待结果");
             int leftResult = leftTask.join();
-            int rightResult = rightTask.join();
+            int rightResult = rightTask.join(); //可用get替换
             System.out.println("结束子任务");
 
             sum = leftResult + rightResult;
@@ -44,6 +44,14 @@ public class CountTask extends RecursiveTask<Integer>{
         return sum;
     }
 
+    /**
+     * ForkJoinTask在执行的时候可能会抛出异常，但是没办法在主线程里直接捕获异常，
+     * 所以ForkJoinTask提供了isCompletedAbnormally()方法来检查任务是否已经抛出异常或已经被取消了
+     * ，并且可以通过ForkJoinTask的getException方法获取异常
+     * @param args
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         CountTask task = new CountTask(1,8);
