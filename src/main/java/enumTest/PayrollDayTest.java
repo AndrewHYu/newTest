@@ -8,6 +8,9 @@ import java.util.Iterator;
  */
 public class PayrollDayTest {
     public static void main(String[] args) {
+        Byte b = new Byte("");
+
+        System.out.println(b);
         PayrollDay.SATURDAY.pay(1,1);
 //        PayrollDay.MONDAY.pay(1,1);
         System.out.println(PayrollDay.valueOf("MONDAY"));
