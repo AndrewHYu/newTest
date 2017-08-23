@@ -7,7 +7,7 @@ import java.io.*;
  */
 public class TestSerialversionUID {
     public static void main(String[] args) throws Exception {
-//        SerializePerson();// 序列化Customer对象
+        SerializePerson();// 序列化Customer对象
         Person customer = DeserializePerson();// 反序列Person对象
         System.out.println(customer);
     }
