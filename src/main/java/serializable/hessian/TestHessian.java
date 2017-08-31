@@ -3,6 +3,7 @@ package serializable.hessian;
 import com.caucho.hessian.io.Hessian2Input;
 import com.caucho.hessian.io.Hessian2Output;
 import com.caucho.hessian.io.SerializerFactory;
+import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -17,15 +18,18 @@ import java.io.IOException;
  * @date 2017/8/23
  * Hessian与Java序列化对比：
  * 相同点：1.都需要实现Serializable接口
- *          2.都不需要调用构造函数
+ *          2.在不适用构造器是使用unsafe
  *
  * 不同点：1.Java序列化serialVersionUID属性值在序列化前后不同反序列化失败
  *          （查看字节文件，Java会带有该属性添加transient无效。
- *          若没有添加该属性会在运行时动态生成，改变类定义该值会改变）
+ *          若没有添加该属性会在运行时动态生成，改变类定义该值会改变。
+ *         2.对于普通Javabean hession反序列化默认不使用构造器可使用参数
+ *          System.setProperty("com.caucho.hessian.unsafe","false");强制使用构造器
+ *          具体使用什么方式详情参见 SerializerFactory.loadDeserializer()方法
  */
 public class TestHessian {
     public static void main(String[] args) throws Exception {
-        User user = new User();
+     /*   User user = new User();
         user.setId(4);
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         Hessian2Output out = new Hessian2Output(bytes);
@@ -36,10 +40,11 @@ public class TestHessian {
 
         ByteArrayInputStream b = new ByteArrayInputStream(bytes.toByteArray());
         Hessian2Input in = new Hessian2Input(b);
-        User u2 = (User) in.readObject();
+        User u2 = (User) in.readObject();*/
 
         //测试serialVersionUID 在hessian中的影响
-        serializeUser();
+        System.setProperty("com.caucho.hessian.unsafe","false");
+//        serializeUser();
         deserializeUser();
 
     }

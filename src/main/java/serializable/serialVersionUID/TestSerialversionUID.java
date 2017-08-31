@@ -7,17 +7,22 @@ import java.io.*;
  */
 public class TestSerialversionUID {
     public static void main(String[] args) throws Exception {
-        SerializePerson();// 序列化Customer对象
+//        SerializePerson();// 序列化Customer对象
         Person customer = DeserializePerson();// 反序列Person对象
         System.out.println(customer);
+
+
+        Person p = new Person("wwww",32);
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        ObjectOutputStream oo = new ObjectOutputStream(bytes);
+        oo.writeObject(p);
+
+        ByteArrayInputStream is = new ByteArrayInputStream(bytes.toByteArray());
+        ObjectInputStream oi = new ObjectInputStream(is);
+        Person p2 = (Person)oi.readObject();
+
     }
-    /**
-     19      * MethodName: SerializePerson
-     20      * Description: 序列化Person对象
-     21      * @author xudp
-     22      * @throws FileNotFoundException
-     23      * @throws IOException
-     24      */
+
     private static void SerializePerson() throws FileNotFoundException, IOException {
         Person customer = new Person("gacl",25);
         // ObjectOutputStream 对象输出流
@@ -26,14 +31,7 @@ public class TestSerialversionUID {
         System.out.println("Person对象序列化成功！");
         oo.close();
     }
-    /**
-     37      * MethodName: DeserializePerson
-     38      * Description: 反序列Person对象
-     39      * @author xudp
-     40      * @return
-     41      * @throws Exception
-     42      * @throws IOException
-     43      */
+
     private static Person DeserializePerson() throws Exception, IOException {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(
                 new File("E:/Person.txt")));
