@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author huangyu
  * @date 2017/8/28
- * -verbose:gc -XX:+PrintGCDetails -XX:MaxDirectMemorySize=40M -XX:+DisableExplicitGC
+ * -verbose:gc -XX:+PrintGCDetails -XX:MaxDirectMemorySize=40M -XX:+DisableExplicitGC -XX:+PrintCompilation
  */
 public class TestDirectByteBuffer {
     Byte[] b = new Byte[1024* 1024];
