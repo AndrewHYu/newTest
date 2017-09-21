@@ -7,6 +7,14 @@ import java.util.Scanner;
  */
 public class test {
     public static void main(String[] args) {
+        Long f = 1234L;
+        Long g = 1234L;
+        System.out.println(f == g.longValue());
+        Integer a = 1;
+        Integer d = new Integer(1);
+        System.out.println(a == d);
+        System.out.println(a == Integer.valueOf(1));
+        System.out.println(d == Integer.valueOf(1));
         System.out.println(Math.nextAfter(1.0D,2.0D));
         Scanner in = new Scanner(System.in);
         String destStr = in.nextLine();
