@@ -25,5 +25,18 @@ public class Test {
         System.out.println(string3 == string2);
         System.out.println(string3 == string);
 
+
+        System.out.println("++++++++++++++++++++++++++++++");
+        StringBuilder sb = new StringBuilder();
+        sb.append("test").append("Method").append("Name");
+        String ss =  new String(sb);
+
+        System.out.println(ss.intern() == ss);
+        System.out.println(ss.intern() == "testMethodName");
+
+
+    }
+    public void testMethodName(){
+
     }
 }
