@@ -14,6 +14,6 @@ public class F4 extends F3 {
     public void say() throws Exception {
         System.out.println("f4");
         parent.say();
-//        tell();
+        tell();
     }
 }

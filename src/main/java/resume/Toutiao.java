@@ -1,7 +1,7 @@
 package resume;
 
-import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -10,8 +10,38 @@ import java.util.Scanner;
  */
 public class Toutiao {
     public static void main(String[] args) {
-        test();
+        room();
     }
+    public static void room(){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();//n
+        int x = sc.nextInt();//x
+        int[] arr = new int[n];
+
+        int [] arr1 = new int[n];
+        for (int i = 0;i < n;i++){
+            arr[i]  = sc.nextInt();
+        }
+        arr1 = Arrays.copyOf(arr,n);
+        Arrays.sort(arr1);
+        int c = arr1[0];
+        for (int i = x - 1;;i--){
+            if (arr[i] == 0){
+                arr[i] = c;
+                break;
+            }
+            if (arr[i] - c >= 0)
+                arr[i] -= c ;
+//            c++;
+            if(i == 0)
+                i = n;
+        }
+
+        for (int i = 0;i < n - 1;i++)
+            System.out.print(arr[i] + " ");
+        System.out.println(arr[n - 1]);
+    }
+
     public static void test(){
         Scanner sc = new Scanner(System.in);
         String sn = sc.nextLine();

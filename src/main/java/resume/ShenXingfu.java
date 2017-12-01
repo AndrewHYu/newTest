@@ -14,6 +14,9 @@ import java.util.Scanner;
  */
 public class ShenXingfu {
     public static void main(String[] args) {
+        float a1 = (float) 2.0;
+        float b = (float) 1.2;
+        System.out.println(a1 - b);
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();
         String[] ss = s.split(",");
