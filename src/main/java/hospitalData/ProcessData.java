@@ -1,11 +1,14 @@
 package hospitalData;
 
 import ca.uhn.hl7v2.parser.PipeParser;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author Andrew
@@ -46,5 +49,18 @@ public class ProcessData {
             }
         }
 
+    }
+
+    @Test
+    public void RegexTest(){
+        String source = "|OBX|4|||||g/ml||";
+        String pattern = "\\|([^\\|]+?)(?=\\|)";
+
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(source);
+
+        while (m.find()){
+            System.out.println(m.group(1));
+        }
     }
 }
