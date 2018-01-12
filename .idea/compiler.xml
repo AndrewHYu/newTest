@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <excludeFromCompile>
-      <file url="file://$PROJECT_DIR$/src/main/java/calenderTest/CalenderTest.java" />
-      <file url="file://$PROJECT_DIR$/src/ioTest/MemoeyMapTest.java" />
-      <file url="file://$PROJECT_DIR$/src/main/java/future/MatchCounter.java" />
-      <file url="file://$PROJECT_DIR$/src/main/java/webSpider/Main.java" />
-      <file url="file://$PROJECT_DIR$/src/main/java/test/User.java" />
-      <file url="file://$PROJECT_DIR$/src/main/java/future/FutureTest.java" />
-      <file url="file://$PROJECT_DIR$/src/main/java/test/Test.java" />
-    </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="!?*.java" />
@@ -26,16 +17,6 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
-      <profile default="false" name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="newTest" />
-      </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
-      <module name="newTest" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
